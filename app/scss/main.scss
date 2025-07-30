@@ -1,0 +1,5 @@
+@forward "./base/index";
+@use "./utils/index" as colorVariable;
+h1 {
+  color: colorVariable.$primary;
+}

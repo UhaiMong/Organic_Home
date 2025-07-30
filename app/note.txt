@@ -1,0 +1,16 @@
+// @mixing and @include use
+@mixing para-style{
+    font-size:16px
+}
+#about p{
+    @include para-style;
+}
+// using parameter for dynamic value
+
+@mixing para-style($size,$style){
+    font-size:$size;
+    text-aling: $style;
+}
+#about p{
+    @include para-style(18px, left);
+}
