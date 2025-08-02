@@ -1,3 +1,66 @@
 $primary: #179800;
 $secondary: #115414;
-$optional: #102861;
+$nutral: #ffffff;
+$textColor: #1f1f1f;
+
+// Font Families
+$font-stack: (
+  "primary": (
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+  ),
+  "secondary": (
+    Georgia,
+    serif,
+  ),
+  "mono": (
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
+    monospace,
+  ),
+);
+
+// Font Weights
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 900,
+);
+
+// Base Typography
+$base-font-size: 16px;
+$base-line-height: 1.5;
+$scale-factor: 1.25;
+
+// Type Scale (Mobile First)
+$type-scale: (
+  "h1": $base-font-size * 2.441,
+  "h2": $base-font-size * 1.953,
+  "h3": $base-font-size * 1.563,
+  "h4": $base-font-size * 1.25,
+  "h5": $base-font-size,
+  "h6": $base-font-size * 0.8,
+  "p": $base-font-size,
+  "small": $base-font-size * 0.875,
+);
+
+// Device Breakpoints
+$breakpoints: (
+  "xs": 0,
+  // Extra small (phones)
+  "sm": 576px,
+  // Small (phones landscape)
+  "md": 768px,
+  // Medium (tablets)
+  "lg": 992px,
+  // Large (desktops)
+  "xl": 1200px,
+  // Extra large
+  "xxl": 1400px // Large desktops,
+);

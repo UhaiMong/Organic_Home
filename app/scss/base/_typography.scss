@@ -1,8 +1,56 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+body {
+  @include font-family("primary");
+  @include font-weight("regular");
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
 h1,
+.h1 {
+  @include responsive-typography("h1");
+  @include font-weight("bold");
+}
 h2,
+.h2 {
+  @include responsive-typography("h2");
+  @include font-weight("semibold");
+}
 h3,
+.h3 {
+  @include responsive-typography("h3");
+  @include font-weight("medium");
+}
 h4,
+.h4 {
+  @include responsive-typography("h4");
+}
 h5,
-h6 {
-  margin-top: 0;
+.h5 {
+  @include responsive-typography("h5");
+}
+h6,
+.h6 {
+  @include responsive-typography("h6");
+  @include font-weight("medium");
+}
+
+p,
+.p {
+  @include responsive-typography("p");
+  margin-bottom: 1em;
+}
+small,
+.small {
+  @include responsive-typography("small");
+}
+
+// Text utilities
+.text-center {
+  text-align: center;
+}
+.text-uppercase {
+  text-transform: uppercase;
 }

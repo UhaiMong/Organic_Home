@@ -1,0 +1,59 @@
+@use "./variables" as *;
+@use "./variables" as v;
+@mixin font-family($family: "primary") {
+  font-family: map-get($font-stack, $family);
+}
+
+@mixin font-weight($weight: "regular") {
+  font-weight: map-get($font-weights, $weight);
+}
+
+@mixin responsive-typography($element) {
+  $scale: $type-scale;
+
+  @if map-has-key($scale, $element) {
+    font-size: map-get($scale, $element);
+    line-height: $base-line-height;
+
+    @if index("h1" "h2" "h3", $element) {
+      margin-top: 0;
+      margin-bottom: map-get($scale, $element) * 0.5;
+      line-height: 1.2;
+    }
+  }
+
+  @media (min-width: 992px) {
+    @if $element == "h1" {
+      font-size: $base-font-size * 3.052;
+    }
+    @if $element == "h2" {
+      font-size: $base-font-size * 2.441;
+    }
+    @if $element == "h3" {
+      font-size: $base-font-size * 1.953;
+    }
+  }
+}
+
+// 1. MOBILE-FIRST (min-width)
+@mixin min-width($breakpoint) {
+  @if map-has-key(v.$breakpoints, $breakpoint) {
+    @media (min-width: map-get(v.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$breakpoint}. Available: #{map-keys(v.$breakpoints)}";
+  }
+}
+
+// 2. DESKTOP-FIRST (max-width)
+@mixin max-width($breakpoint) {
+  @if map-has-key(v.$breakpoints, $breakpoint) {
+    $max: map-get(v.$breakpoints, $breakpoint) - 0.02px;
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$breakpoint}";
+  }
+}

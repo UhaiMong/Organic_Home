@@ -1,5 +1,112 @@
 @forward "./base/index";
-@use "./utils/index" as colorVariable;
-h1 {
-  color: colorVariable.$primary;
+@use "utils" as *;
+@use "./base/index" as baseIndex;
+@use "./utils/index" as utilIndex;
+
+header {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    .logo {
+      width: 100px;
+      height: 61px;
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    @include utilIndex.min-width("sm") {
+      .logo {
+        width: 154px;
+        height: 61px;
+      }
+    }
+    .nav-left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: auto;
+      @include utilIndex.min-width("lg") {
+        width: 75%;
+      }
+      .menu-items {
+        display: none;
+        @include utilIndex.min-width("lg") {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+        }
+        li a {
+          color: utilIndex.$textColor;
+          font-weight: map-get(utilIndex.$font-weights, "medium");
+          font-size: 20px;
+        }
+        .active-menu {
+          font-weight: map-get(utilIndex.$font-weights, "bold");
+        }
+      }
+      .menu-left {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        li a {
+          color: utilIndex.$textColor;
+          font-weight: map-get(utilIndex.$font-weights, "medium");
+          font-size: 20px;
+        }
+        .btn-search,
+        .btn-cart,
+        .btn-login,
+        .btn-register {
+          display: none;
+        }
+        .btn-search,
+        .btn-cart,
+        .btn-login,
+        .btn-register {
+          @include utilIndex.min-width("sm") {
+            display: block;
+          }
+        }
+      }
+    }
+    .btn {
+      border: 1px solid utilIndex.$primary;
+      padding: 6px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: ease 0.3s;
+      background: none;
+    }
+    .btn-login {
+      @extend .btn;
+    }
+    .btn-login:hover {
+      @extend .btn-register;
+    }
+    .btn-register {
+      @extend .btn;
+      background: utilIndex.$primary;
+      color: white;
+    }
+    .menu-toggle-button {
+      @extend .btn;
+      @include utilIndex.min-width("lg") {
+        display: none;
+      }
+    }
+    button {
+      border: none;
+      padding: 0;
+      font-size: 20px;
+      outline: none;
+      color: black;
+      font-weight: bold;
+    }
+  }
 }
