@@ -108,7 +108,7 @@ small,
   margin-right: auto;
 }
 
-.btn, .popular-product-section .popular-products-offer .offer-text button, .nav-for-mobile ul li .btn-register, .nav-for-mobile ul li .btn-login, header nav .menu-toggle-button, header nav .btn-register, header nav .btn-login:hover, header nav .btn-login {
+.btn, .popular-product-section .container .popular-product-content .popular-products-offer .offer-text button, .nav-for-mobile ul li .btn-register, .nav-for-mobile ul li .btn-login, .navbar-section header nav .menu-toggle-button, .navbar-section header nav .btn-register, .navbar-section header nav .btn-login:hover, .navbar-section header nav .btn-login {
   border: 1px solid #179800;
   padding: 6px 16px;
   border-radius: 6px;
@@ -118,90 +118,96 @@ small,
   background: none;
 }
 
-header {
+.navbar-section {
+  min-height: 80px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background: #ffffff;
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(244, 242, 237) 50%, rgb(240, 236, 228) 100%);
+  position: sticky;
+  z-index: 100;
+  align-content: center;
+  top: 0;
 }
-header nav {
+.navbar-section header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 80px;
 }
-header nav .logo {
+.navbar-section header nav .logo {
   width: 100px;
   height: 61px;
 }
-header nav .logo .logo img {
+.navbar-section header nav .logo .logo img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 @media (min-width: 576px) {
-  header nav .logo {
+  .navbar-section header nav .logo {
     width: 154px;
     height: 61px;
   }
 }
-header nav .nav-left {
+.navbar-section header nav .nav-left {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: auto;
 }
 @media (min-width: 992px) {
-  header nav .nav-left {
+  .navbar-section header nav .nav-left {
     width: 75%;
   }
 }
-header nav .nav-left .menu-items {
+.navbar-section header nav .nav-left .menu-items {
   display: none;
 }
 @media (min-width: 992px) {
-  header nav .nav-left .menu-items {
+  .navbar-section header nav .nav-left .menu-items {
     display: flex;
     gap: 12px;
     align-items: center;
   }
 }
-header nav .nav-left .menu-items li a {
+.navbar-section header nav .nav-left .menu-items li a {
   color: #1f1f1f;
   font-weight: 500;
   font-size: 20px;
 }
-header nav .nav-left .menu-items .active-menu {
+.navbar-section header nav .nav-left .menu-items .active-menu {
   font-weight: 700;
 }
-header nav .nav-left .menu-left {
+.navbar-section header nav .nav-left .menu-left {
   display: flex;
   gap: 12px;
   align-items: center;
 }
-header nav .nav-left .menu-left li a {
+.navbar-section header nav .nav-left .menu-left li a {
   color: #1f1f1f;
   font-weight: 500;
   font-size: 20px;
 }
-header nav .nav-left .menu-left .btn-login,
-header nav .nav-left .menu-left .btn-register {
+.navbar-section header nav .nav-left .menu-left .btn-login,
+.navbar-section header nav .nav-left .menu-left .btn-register {
   display: none;
 }
 @media (min-width: 576px) {
-  header nav .nav-left .menu-left .btn-login,
-  header nav .nav-left .menu-left .btn-register {
+  .navbar-section header nav .nav-left .menu-left .btn-login,
+  .navbar-section header nav .nav-left .menu-left .btn-register {
     display: block;
   }
 }
-header nav .btn-register, header nav .btn-login:hover {
+.navbar-section header nav .btn-register, .navbar-section header nav .btn-login:hover {
   background: #179800;
   color: white;
 }
 @media (min-width: 992px) {
-  header nav .menu-toggle-button {
+  .navbar-section header nav .menu-toggle-button {
     display: none;
   }
 }
-header nav .menu-toggle-button button {
+.navbar-section header nav .menu-toggle-button button {
   cursor: pointer;
   border: none;
   padding: 0;
@@ -262,13 +268,15 @@ header nav .menu-toggle-button button {
   background-color: #ffffff;
   color: black;
 }
-.nav-for-mobile ul li .btn-register, .nav-for-mobile ul li header nav .btn-login:hover, header nav .nav-for-mobile ul li .btn-login:hover {
+.nav-for-mobile ul li .btn-register, .nav-for-mobile ul li .navbar-section header nav .btn-login:hover, .navbar-section header nav .nav-for-mobile ul li .btn-login:hover {
   background-color: #ffffff;
   margin-top: 8px;
 }
 @media (min-width: 576px) {
   .nav-for-mobile ul li .btn-login,
-  .nav-for-mobile ul li .btn-register {
+  .nav-for-mobile ul li .btn-register,
+  .nav-for-mobile ul li .navbar-section header nav .btn-login:hover,
+  .navbar-section header nav .nav-for-mobile ul li .btn-login:hover {
     display: none;
   }
 }
@@ -393,8 +401,9 @@ header nav .menu-toggle-button button {
 }
 
 .popular-product-section {
+  width: 100%;
+  height: auto;
   margin-top: 130px;
-  background: #ffffff;
   background: linear-gradient(-90deg, rgb(244, 242, 237) 0%, rgb(239, 235, 227) 50%, rgb(240, 236, 228) 100%);
 }
 .popular-product-section .container h3 {
@@ -403,34 +412,111 @@ header nav .menu-toggle-button button {
   padding-top: 80px;
   padding-bottom: 20px;
 }
-.popular-product-section .popular-products-offer {
-  width: 424px;
+.popular-product-section .container .popular-product-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+  padding-bottom: 100px;
+}
+@media (min-width: 992px) {
+  .popular-product-section .container .popular-product-content {
+    flex-direction: row;
+  }
+}
+.popular-product-section .container .popular-product-content .popular-products-offer {
+  width: 100%;
   height: 402px;
   background: #53db3a;
-  background: linear-gradient(-270deg, rgb(83, 219, 58) 0%, rgb(131, 229, 114) 50%, rgb(229, 250, 226) 100%);
+  background: linear-gradient(to bottom right, rgb(23, 152, 0) 0%, rgb(131, 229, 114) 50%, rgb(229, 250, 226) 100%);
   position: relative;
   border-radius: 12px;
 }
-.popular-product-section .popular-products-offer .offer-text {
+@media (min-width: 992px) {
+  .popular-product-section .container .popular-product-content .popular-products-offer {
+    width: 32%;
+  }
+}
+.popular-product-section .container .popular-product-content .popular-products-offer .offer-text {
   padding: 18px;
 }
-.popular-product-section .popular-products-offer .offer-text h4 {
+.popular-product-section .container .popular-product-content .popular-products-offer .offer-text h4 {
   margin-top: 20px;
   color: #ffffff;
 }
-.popular-product-section .popular-products-offer .offer-text p {
+.popular-product-section .container .popular-product-content .popular-products-offer .offer-text p {
   margin-top: 20px;
   color: rgba(17, 17, 17, 0.7);
 }
-.popular-product-section .popular-products-offer .offer-text button {
+.popular-product-section .container .popular-product-content .popular-products-offer .offer-text button {
   background-color: #ffffff;
   color: #1f1f1f;
 }
-.popular-product-section .popular-products-offer .offer-img img {
+.popular-product-section .container .popular-product-content .popular-products-offer .offer-text button:hover {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+.popular-product-section .container .popular-product-content .popular-products-offer .offer-img img {
   position: absolute;
-  width: 271px;
-  height: 291px;
+  width: 210px;
+  height: 265px;
   right: 0;
   bottom: 0;
   overflow: hidden;
+}
+.popular-product-section .container .popular-product-content .popular-products {
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 576px) {
+  .popular-product-section .container .popular-product-content .popular-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .popular-product-section .container .popular-product-content .popular-products {
+    width: 68%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .popular-product-section .container .popular-product-content .popular-products {
+    width: 68%;
+    grid-template-columns: repeat(3, 1fr);
+    height: 402px;
+  }
+}
+.popular-product-section .container .popular-product-content .popular-products .popular-product {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #ffffff;
+  width: auto;
+  height: 118px;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+.popular-product-section .container .popular-product-content .popular-products .popular-product:hover {
+  transform: scale(1.05);
+}
+.popular-product-section .container .popular-product-content .popular-products .popular-product img {
+  width: 100px;
+  height: 86px;
+  background-color: transparent;
+  border-radius: 12px;
+}
+.popular-product-section .container .popular-product-content .popular-products .popular-product .product-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.popular-product-section .container .popular-product-content .popular-products .popular-product .product-info i {
+  color: yellow;
 }/*# sourceMappingURL=main.css.map */
