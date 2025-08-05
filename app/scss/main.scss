@@ -12,6 +12,15 @@
   transition: ease 0.3s;
   background: none;
 }
+.section-heading {
+  padding-top: 80px;
+  @include utilIndex.min-width("md") {
+    padding-top: 100px;
+  }
+  padding-bottom: 48px;
+  font-weight: utilIndex.$semibold;
+  color: utilIndex.$primary;
+}
 .navbar-section {
   min-height: 80px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -239,13 +248,7 @@
 // Services Section
 .service-container {
   h3 {
-    margin-top: 80px;
-    @include utilIndex.min-width("md") {
-      margin-top: 130px;
-    }
-    margin-bottom: 48px;
-    font-weight: utilIndex.$semibold;
-    color: utilIndex.$primary;
+    @extend .section-heading;
   }
   .services {
     display: flex;
@@ -299,10 +302,7 @@
   );
   .container {
     h3 {
-      color: utilIndex.$primary;
-      font-weight: utilIndex.$semibold;
-      padding-top: 80px;
-      padding-bottom: 20px;
+      @extend .section-heading;
     }
     .popular-product-content {
       display: flex;
@@ -403,6 +403,79 @@
             text-align: left;
             i {
               color: yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Arival Offer
+.arival-offer-section {
+  .container {
+    h3 {
+      @extend .section-heading;
+    }
+    .arival-offer-container {
+      display: flex;
+      gap: 10px;
+      .arival-offer-left {
+        width: 50%;
+        height: 344px;
+        background-color: utilIndex.$secondary;
+        border-radius: utilIndex.$rounded-xl;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        overflow: hidden;
+        .arival-offer-left-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 40px;
+          button {
+            @extend .btn;
+            border: none;
+            background-color: utilIndex.$secondaryFilter;
+            color: utilIndex.$nutral;
+          }
+          p {
+            font-size: utilIndex.$base-font-size * 1.5;
+            color: utilIndex.$nutral;
+            span {
+              font-weight: utilIndex.$bold;
+            }
+          }
+        }
+      }
+      .arival-offer-right {
+        width: 50%;
+        height: 344px;
+        background-color: utilIndex.$coolBlack;
+        border-radius: utilIndex.$rounded-xl;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        overflow: hidden;
+        .arival-offer-right-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 40px;
+          button {
+            @extend .btn;
+            border: none;
+            background-color: utilIndex.$coolBlackFilter;
+            color: utilIndex.$nutral;
+          }
+          p {
+            font-size: utilIndex.$base-font-size * 1.5;
+            color: utilIndex.$nutral;
+            span {
+              font-weight: utilIndex.$bold;
             }
           }
         }

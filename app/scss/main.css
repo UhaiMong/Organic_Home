@@ -108,7 +108,7 @@ small,
   margin-right: auto;
 }
 
-.btn, .popular-product-section .container .popular-product-content .popular-products-offer .offer-text button, .nav-for-mobile ul li .btn-register, .nav-for-mobile ul li .btn-login, .navbar-section header nav .menu-toggle-button, .navbar-section header nav .btn-register, .navbar-section header nav .btn-login:hover, .navbar-section header nav .btn-login {
+.btn, .arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content button, .arival-offer-section .container .arival-offer-container .arival-offer-left .arival-offer-left-content button, .popular-product-section .container .popular-product-content .popular-products-offer .offer-text button, .nav-for-mobile ul li .btn-register, .nav-for-mobile ul li .btn-login, .navbar-section header nav .menu-toggle-button, .navbar-section header nav .btn-register, .navbar-section header nav .btn-login:hover, .navbar-section header nav .btn-login {
   border: 1px solid #179800;
   padding: 6px 16px;
   border-radius: 6px;
@@ -116,6 +116,18 @@ small,
   font-size: 20px;
   transition: ease 0.3s;
   background: none;
+}
+
+.section-heading, .arival-offer-section .container h3, .popular-product-section .container h3, .service-container h3 {
+  padding-top: 80px;
+  padding-bottom: 48px;
+  font-weight: 600;
+  color: #179800;
+}
+@media (min-width: 768px) {
+  .section-heading, .arival-offer-section .container h3, .popular-product-section .container h3, .service-container h3 {
+    padding-top: 100px;
+  }
 }
 
 .navbar-section {
@@ -345,17 +357,6 @@ small,
   }
 }
 
-.service-container h3 {
-  margin-top: 80px;
-  margin-bottom: 48px;
-  font-weight: 600;
-  color: #179800;
-}
-@media (min-width: 768px) {
-  .service-container h3 {
-    margin-top: 130px;
-  }
-}
 .service-container .services {
   display: flex;
   flex-direction: column;
@@ -405,12 +406,6 @@ small,
   height: auto;
   margin-top: 130px;
   background: linear-gradient(-90deg, rgb(244, 242, 237) 0%, rgb(239, 235, 227) 50%, rgb(240, 236, 228) 100%);
-}
-.popular-product-section .container h3 {
-  color: #179800;
-  font-weight: 600;
-  padding-top: 80px;
-  padding-bottom: 20px;
 }
 .popular-product-section .container .popular-product-content {
   display: flex;
@@ -519,4 +514,67 @@ small,
 }
 .popular-product-section .container .popular-product-content .popular-products .popular-product .product-info i {
   color: yellow;
+}
+
+.arival-offer-section .container .arival-offer-container {
+  display: flex;
+  gap: 10px;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-left {
+  width: 50%;
+  height: 344px;
+  background-color: #115414;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-left .arival-offer-left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-left .arival-offer-left-content button {
+  border: none;
+  background-color: #63b76d;
+  color: #ffffff;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-left .arival-offer-left-content p {
+  font-size: 24px;
+  color: #ffffff;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-left .arival-offer-left-content p span {
+  font-weight: 700;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-right {
+  width: 50%;
+  height: 344px;
+  background-color: #102861;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content button {
+  border: none;
+  background-color: #2a4d97;
+  color: #ffffff;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content p {
+  font-size: 24px;
+  color: #ffffff;
+}
+.arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content p span {
+  font-weight: 700;
 }/*# sourceMappingURL=main.css.map */
