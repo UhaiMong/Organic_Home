@@ -32,7 +32,7 @@
     rgb(240, 236, 228) 100%
   );
   position: sticky;
-  z-index: 100;
+  z-index: 101;
   align-content: center;
   top: 0;
   header {
@@ -40,17 +40,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .logo {
+      .logo img {
         width: 100px;
         height: 61px;
-        .logo img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
       }
       @include utilIndex.min-width("sm") {
-        .logo {
+        .logo img {
           width: 154px;
           height: 61px;
         }
@@ -419,9 +414,13 @@
     }
     .arival-offer-container {
       display: flex;
+      flex-direction: column;
       gap: 10px;
+      @include utilIndex.min-width("md") {
+        flex-direction: row;
+      }
       .arival-offer-left {
-        width: 50%;
+        width: 100%;
         height: 344px;
         background-color: utilIndex.$secondary;
         border-radius: utilIndex.$rounded-xl;
@@ -430,6 +429,9 @@
         align-items: center;
         padding: 20px;
         overflow: hidden;
+        @include utilIndex.min-width("md") {
+          width: 50%;
+        }
         .arival-offer-left-content {
           display: flex;
           flex-direction: column;
@@ -451,7 +453,7 @@
         }
       }
       .arival-offer-right {
-        width: 50%;
+        width: 100%;
         height: 344px;
         background-color: utilIndex.$coolBlack;
         border-radius: utilIndex.$rounded-xl;
@@ -460,6 +462,9 @@
         align-items: center;
         padding: 20px;
         overflow: hidden;
+        @include utilIndex.min-width("md") {
+          width: 50%;
+        }
         .arival-offer-right-content {
           display: flex;
           flex-direction: column;
@@ -478,6 +483,128 @@
               font-weight: utilIndex.$bold;
             }
           }
+        }
+      }
+    }
+  }
+}
+// News latter section
+.news-later-section {
+  .container {
+    position: relative;
+    .news-latter {
+      height: auto;
+      margin-top: 100px;
+      background-color: utilIndex.$bgColor;
+      border-radius: utilIndex.$rounded-3xl;
+      z-index: 100;
+      position: absolute;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      color: utilIndex.$textColor;
+      column-gap: 50px;
+      padding: 20px 50px;
+      align-items: center;
+      @include utilIndex.min-width("md") {
+        flex-direction: row;
+        height: 457px;
+        padding: 50px 100px;
+      }
+      .news-latter-img {
+        flex: 1;
+        width: 200px;
+        @include utilIndex.min-width("md") {
+          width: 400px;
+        }
+        img {
+          width: 100%;
+        }
+      }
+      .news-latter-content {
+        text-align: center;
+        flex: 1;
+        h3 {
+          color: utilIndex.$primary;
+        }
+        @include utilIndex.min-width("md") {
+          text-align: left;
+          h3 {
+            color: utilIndex.$textColor;
+          }
+        }
+        input {
+          margin-top: 20px;
+          padding: 10px;
+          background-color: utilIndex.$nutral;
+          border: none;
+          border-radius: utilIndex.$rounded-xl;
+          width: 100%;
+          transition: ease 0.3s;
+          &:focus {
+            outline: 1px solid utilIndex.$primary;
+            // border: 1px solid utilIndex.$primary;
+          }
+        }
+        button {
+          @extend .btn;
+          margin-top: 40px;
+          font-size: 16px;
+          background-color: utilIndex.$primary;
+          color: utilIndex.$nutral;
+        }
+      }
+    }
+  }
+}
+// Footer Section
+.footer-section {
+  width: 100%;
+  height: auto;
+  background-color: utilIndex.$primary;
+  color: utilIndex.$nutral;
+  margin-top: 350px;
+  z-index: 0;
+  .container {
+    .footer-top {
+      height: 300px;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      @include utilIndex.min-width("md") {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      gap: 10px;
+      .footer-logo {
+        flex: 1;
+        p {
+          padding-right: 100px;
+        }
+      }
+      .quick-links {
+        ul {
+          li {
+            a {
+              color: utilIndex.$nutral;
+            }
+          }
+        }
+        flex: 1;
+      }
+      .social-links {
+        text-align: end;
+        h6 {
+          text-align: left;
+        }
+        .social-icons {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
         }
       }
     }

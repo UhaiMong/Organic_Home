@@ -108,7 +108,7 @@ small,
   margin-right: auto;
 }
 
-.btn, .arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content button, .arival-offer-section .container .arival-offer-container .arival-offer-left .arival-offer-left-content button, .popular-product-section .container .popular-product-content .popular-products-offer .offer-text button, .nav-for-mobile ul li .btn-register, .nav-for-mobile ul li .btn-login, .navbar-section header nav .menu-toggle-button, .navbar-section header nav .btn-register, .navbar-section header nav .btn-login:hover, .navbar-section header nav .btn-login {
+.btn, .news-later-section .container .news-latter .news-latter-content button, .arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content button, .arival-offer-section .container .arival-offer-container .arival-offer-left .arival-offer-left-content button, .popular-product-section .container .popular-product-content .popular-products-offer .offer-text button, .nav-for-mobile ul li .btn-register, .nav-for-mobile ul li .btn-login, .navbar-section header nav .menu-toggle-button, .navbar-section header nav .btn-register, .navbar-section header nav .btn-login:hover, .navbar-section header nav .btn-login {
   border: 1px solid #179800;
   padding: 6px 16px;
   border-radius: 6px;
@@ -136,7 +136,7 @@ small,
   background: #ffffff;
   background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(244, 242, 237) 50%, rgb(240, 236, 228) 100%);
   position: sticky;
-  z-index: 100;
+  z-index: 101;
   align-content: center;
   top: 0;
 }
@@ -145,18 +145,12 @@ small,
   justify-content: space-between;
   align-items: center;
 }
-.navbar-section header nav .logo {
+.navbar-section header nav .logo img {
   width: 100px;
   height: 61px;
 }
-.navbar-section header nav .logo .logo img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 @media (min-width: 576px) {
-  .navbar-section header nav .logo {
+  .navbar-section header nav .logo img {
     width: 154px;
     height: 61px;
   }
@@ -518,10 +512,16 @@ small,
 
 .arival-offer-section .container .arival-offer-container {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
+@media (min-width: 768px) {
+  .arival-offer-section .container .arival-offer-container {
+    flex-direction: row;
+  }
+}
 .arival-offer-section .container .arival-offer-container .arival-offer-left {
-  width: 50%;
+  width: 100%;
   height: 344px;
   background-color: #115414;
   border-radius: 12px;
@@ -530,6 +530,11 @@ small,
   align-items: center;
   padding: 20px;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .arival-offer-section .container .arival-offer-container .arival-offer-left {
+    width: 50%;
+  }
 }
 .arival-offer-section .container .arival-offer-container .arival-offer-left .arival-offer-left-content {
   display: flex;
@@ -550,7 +555,7 @@ small,
   font-weight: 700;
 }
 .arival-offer-section .container .arival-offer-container .arival-offer-right {
-  width: 50%;
+  width: 100%;
   height: 344px;
   background-color: #102861;
   border-radius: 12px;
@@ -559,6 +564,11 @@ small,
   align-items: center;
   padding: 20px;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .arival-offer-section .container .arival-offer-container .arival-offer-right {
+    width: 50%;
+  }
 }
 .arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content {
   display: flex;
@@ -577,4 +587,125 @@ small,
 }
 .arival-offer-section .container .arival-offer-container .arival-offer-right .arival-offer-right-content p span {
   font-weight: 700;
+}
+
+.news-later-section .container {
+  position: relative;
+}
+.news-later-section .container .news-latter {
+  height: auto;
+  margin-top: 100px;
+  background-color: #efebe3;
+  border-radius: 24px;
+  z-index: 100;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #1f1f1f;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  padding: 20px 50px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .news-later-section .container .news-latter {
+    flex-direction: row;
+    height: 457px;
+    padding: 50px 100px;
+  }
+}
+.news-later-section .container .news-latter .news-latter-img {
+  flex: 1;
+  width: 200px;
+}
+@media (min-width: 768px) {
+  .news-later-section .container .news-latter .news-latter-img {
+    width: 400px;
+  }
+}
+.news-later-section .container .news-latter .news-latter-img img {
+  width: 100%;
+}
+.news-later-section .container .news-latter .news-latter-content {
+  text-align: center;
+  flex: 1;
+}
+.news-later-section .container .news-latter .news-latter-content h3 {
+  color: #179800;
+}
+@media (min-width: 768px) {
+  .news-later-section .container .news-latter .news-latter-content {
+    text-align: left;
+  }
+  .news-later-section .container .news-latter .news-latter-content h3 {
+    color: #1f1f1f;
+  }
+}
+.news-later-section .container .news-latter .news-latter-content input {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  transition: ease 0.3s;
+}
+.news-later-section .container .news-latter .news-latter-content input:focus {
+  outline: 1px solid #179800;
+}
+.news-later-section .container .news-latter .news-latter-content button {
+  margin-top: 40px;
+  font-size: 16px;
+  background-color: #179800;
+  color: #ffffff;
+}
+
+.footer-section {
+  width: 100%;
+  height: auto;
+  background-color: #179800;
+  color: #ffffff;
+  margin-top: 350px;
+  z-index: 0;
+}
+.footer-section .container .footer-top {
+  height: 300px;
+}
+.footer-section .container .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .footer-section .container .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+.footer-section .container .footer-content .footer-logo {
+  flex: 1;
+}
+.footer-section .container .footer-content .footer-logo p {
+  padding-right: 100px;
+}
+.footer-section .container .footer-content .quick-links {
+  flex: 1;
+}
+.footer-section .container .footer-content .quick-links ul li a {
+  color: #ffffff;
+}
+.footer-section .container .footer-content .social-links {
+  text-align: end;
+}
+.footer-section .container .footer-content .social-links h6 {
+  text-align: left;
+}
+.footer-section .container .footer-content .social-links .social-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
